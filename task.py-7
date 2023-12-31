@@ -1,0 +1,201 @@
+# Python Loops
+name = 'Mrs.Destroyer'
+for i in name:
+    print(i)
+    if ( i == "D"):
+        print("Happy New Year")
+
+
+# Loops and Control Statements (continue, break and pass) in Python
+   # Break
+while True:
+    name = input("Enter your name:")
+    if name != "":
+        break
+
+   # Continue
+phone_number = "123-456-789"
+for i in phone_number:
+    if i =="-":
+        continue
+    print(i , end="")  
+    
+   # Pass
+for i in range(0,10):
+    if i == 13:
+        pass
+    else:
+        print(i)          
+
+
+# Looping technique in python 
+   #enumerate()
+for key,value in enumerate(['Happy' , 'New' , 'Year']):
+    print(key,value)
+
+   #zip()
+part1 = ['name' , 'age' , 'address']
+part2 = ['Ali' , '22' , 'lahore']
+for part1,part2 in zip(part1,part2):
+    print('what is your {0} I am {1}.'.format(part1,part2))     
+
+    #sorted() and #reversed()
+lis = [1,3,5,6,2,1,3]
+print("The list in sorted order is :")
+for i in sorted(lis) :
+    print(i,end=" ")
+
+    print("\r")
+
+print("The list is sorted order (without duplicates) is :")
+for i in sorted (set(lis)):
+    print(i,end=" ") 
+
+    print("\r")
+
+print("The list is reversed order is :")
+for i in reversed(lis):
+    print(i,end=" ")        
+
+
+#  range vs xrange on python
+   #range
+a = range(5)
+print(a)
+print(type(a))  
+
+
+# Programs for printing pyramid technique in python
+rows = int(input("Enter number of rows :"))
+
+for i in range(0,rows):
+    for j in range(0, rows - i - 1):
+        print(" ",end="")
+    for j in range(0, i+1):
+        print("* ",end="") 
+    print()   
+
+
+# Chaining comparison in python
+n = 1
+result = 1 < n < 20
+print(result)
+n = 10 
+result = 1 < n <20
+print(result)
+
+
+# else with for
+for i in range(6):
+    print(i)
+    if i == 4:
+       print("yes")
+else:
+     print("no")    
+
+
+
+# switch function
+l = int(input("Enter a week No.:\t"))
+match l:
+    case 0:
+        print("It's Sunday")
+    case 1:
+        print("It's Monday")
+    case 2:
+        print("It's Tuesday")
+    case 3:
+        print("It's Wednesday")
+    case 4:
+        print("It's Thursday")
+    case 5:
+        print("It's Friday")
+    case 7:
+        print("It's Saturday")
+    case _ :
+        print("Enter No. between 0-7")
+
+
+
+# Using iteration in python effectively
+nums = [1,2,3,4,5]
+
+for num in nums:
+    if num == 3:
+        print('Found!')
+        continue
+    print(num)
+
+
+
+# Python Itertools
+from itertools import product
+a = [1,2]
+b = [3,4]
+prod = product(a,b)
+print(prod)
+print(list(prod))
+from itertools import combinations
+a = [1,2,3,4,5]
+comb = combinations(a,2)
+print(comb)
+print(list(comb))
+
+
+
+# Python iter() and next() | Converting an object into an iterator
+    #next()
+students = ["Asad","Ahamd","Ali","Akram"]
+student_iterator = iter(students)
+x = next(student_iterator)
+print(x)
+x = next(student_iterator)
+print(x)
+x = next(student_iterator)
+print(x)
+x = next(student_iterator)
+print(x)
+    #iter()
+students = ["Asad","Ahamd","Ali","Akram"]
+iterator = iter(students)
+print(next(iterator))
+for x in iterator:
+    print(x)
+
+
+
+# Python | Difference between iterable and iterator        
+   #iterable
+l = [1,2]
+for x in l:
+    print('x',x)
+    for y in l:
+        print('y',y)
+
+   #iterator
+it= iter([1,2])
+for x in it:
+    print('x',x)
+    for y in it:
+        print('y',y)       
+
+
+
+# Generators in python
+def sample_generator(number):
+    for i in range(number):
+        yield f"Next number is {i}"
+
+if __name__=="__main__":
+    number = 5        
+    gen_obj = sample_generator(number)
+    print(type(gen_obj))
+    print(next(gen_obj))
+    print(next(gen_obj))
+    print(next(gen_obj))
+
+
+
+# Generators expression in python
+lst = (i for i in range(1_001_010))
+print(f"{lst.__sizeof__():_} Byte")
